@@ -22,15 +22,20 @@ It simulates coupled signals, applies ridge-regularized LPV regression, and visu
 ├── README.md
 └── LICENSE
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 This repository provides a comprehensive MATLAB framework for simulating, estimating, and visualizing phase–amplitude coupling (PAC) using Linear Parameter-Varying autoregressive (LPV-AR) modeling.
 It serves both as a reproducible research tool and as an educational implementation of the LPV-AR approach described in:
 
 Kostoglou, K., & Müller-Putz, G. R. (2022). Using linear parameter varying autoregressive models to measure cross frequency couplings in EEG signals. Frontiers in Human Neuroscience, 16, 915815. https://doi.org/10.3389/fnhum.2022.915815
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 🧩 Motivation and Background
 Cross-frequency coupling (CFC) — particularly phase–amplitude coupling (PAC) — describes a fundamental mechanism of neural coordination in which the phase of a slow oscillation modulates the amplitude of a faster rhythm.
 PAC has been widely studied in EEG, MEG, and LFP data to understand hierarchical communication across spatial and temporal scales in the brain. Conventional PAC metrics, such as: the Modulation Index (MI) by Tort et al., the Mean Vector Length (MVL), or General Linear Model (GLM) based methods, quantify the strength of coupling but do not model the dynamics of the relationship itself. The LPV-AR framework extends these traditional approaches by explicitly modeling the amplitude envelope of the high-frequency signal as an output of a time-varying autoregressive process, whose coefficients evolve smoothly as a function of the low-frequency phase. This parameter-varying structure enables the model to capture nonlinear dependencies and time-varying interactions, offering: higher spectral specificity, reduced bias outside true coupling bands, and interpretability through system identification principles.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ⚙️ Method Overview
 1. Signal Generation or Acquisition: Generate synthetic coupled signals with known PAC (monophasic or biphasic) or provide real EEG/LFP data.
@@ -55,3 +60,15 @@ PAC has been widely studied in EEG, MEG, and LFP data to understand hierarchical
 6. Visualization
   - Compute MI across grids of phase (fl) and amplitude (fh) frequencies.
   - Display results as a 2D PAC map (i.e., commodulogram).
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+If you use this code, please cite this repository and the following paper:
+
+Kostoglou, K., & Müller-Putz, G. R. (2022).
+Using linear parameter varying autoregressive models to measure cross frequency couplings in EEG signals.
+Frontiers in Human Neuroscience, 16, 915815.
+https://doi.org/10.3389/fnhum.2022.915815
