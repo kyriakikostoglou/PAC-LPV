@@ -1,11 +1,13 @@
-# LPV-Based Phase–Amplitude Coupling Estimation
+# 🧠 LPV-Based Phase–Amplitude Coupling (PAC) Estimation
 
 This repository implements a **Linear Parameter-Varying (LPV)** modeling framework for estimating **Phase–Amplitude Coupling (PAC)** between neural oscillations.  
 It simulates coupled signals, applies ridge-regularized LPV regression, and visualizes the resulting modulation index (MI) across phase–amplitude frequency pairs.
 
 ---
 
-## 📂 Structure
+## 📁 Structure
+
+```text
 / [root]
 ├── code
 │   ├── Main.m                 # Main script (entry point)
@@ -19,5 +21,3 @@ It simulates coupled signals, applies ridge-regularized LPV regression, and visu
 │   └── eegfilt.m              # FIR filter (EEGLAB version)
 ├── README.md
 └── LICENSE
-
-
