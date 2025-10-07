@@ -28,8 +28,10 @@ It simulates coupled signals, applies ridge-regularized LPV regression, and visu
 This repository provides a comprehensive MATLAB framework for simulating, estimating, and visualizing phase–amplitude coupling (PAC) using Linear Parameter-Varying autoregressive (LPV-AR) modeling.
 It serves both as a reproducible research tool and as an educational implementation of the LPV-AR approach described in:
 
-Kostoglou, K., & Müller-Putz, G. R. (2022). Using linear parameter varying autoregressive models to measure cross frequency couplings in EEG signals. Frontiers in Human Neuroscience, 16, 915815. https://doi.org/10.3389/fnhum.2022.915815
-
+> **Kostoglou, K., & Müller-Putz, G. R. (2022).**  
+> *Using linear parameter varying autoregressive models to measure cross frequency couplings in EEG signals.*  
+> *Frontiers in Human Neuroscience, 16, 915815.*  
+> [https://doi.org/10.3389/fnhum.2022.915815](https://doi.org/10.3389/fnhum.2022.915815)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## 🧩 **Motivation**
 
