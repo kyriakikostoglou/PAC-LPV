@@ -87,6 +87,7 @@ This model-based approach provides:
 
 <img width="592" height="266" alt="image" src="https://github.com/user-attachments/assets/03c9e043-e069-4d49-8713-fa4253038041" />
 
+<h5>Copied from Kostoglou, K., & Müller-Putz, G. R. (2022) under CC-BY license.</h5> 
      
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## 🧱 **Function Descriptions**
@@ -124,6 +125,10 @@ Generates a **monophasic** coupled signal:
 
 **Output:** simulated PAC signal `s` and sampling rate `fs`.
 
+<img width="444" height="570" alt="image" src="https://github.com/user-attachments/assets/47aad605-5f4a-4539-9851-0e9783146d77" />
+
+<h5>Copied from Kostoglou, K., & Müller-Putz, G. R. (2022) under CC-BY license.</h5>
+
 ---
 
 ### **createsim2.m**
@@ -131,6 +136,10 @@ Generates a **biphasic** coupled signal with two amplitude peaks per phase cycle
 Implements zero-mean modulation to produce symmetric coupling.  
 
 **Output:** biphasic PAC signal `s` and sampling rate `fs`.
+
+<img width="475" height="568" alt="image" src="https://github.com/user-attachments/assets/84d22b8f-ee69-4fd1-976e-245adbe5d49e" />
+
+<h5>Copied from Kostoglou, K., & Müller-Putz, G. R. (2022) under CC-BY license.</h5>
 
 ---
 
@@ -142,9 +151,13 @@ Core LPV-AR PAC estimator.
 3. Fits each candidate model using `LPVpol_reg`.  
 4. Selects best `(p, pl)` combination by minimum residual error.  
 5. Tunes `λ` using `LPVpol_reg_all` (U-curve method).  
-6. Fits final model and computes MI using phase-shuffled nulls via `SIM_LPVpol`.  
-
+6. Fits final model and computes MI using phase-shuffled nulls via `SIM_LPVpol`.
+7. 
 **Output:** scalar modulation index (MI).
+
+![fnhum-16-915815-g003](https://github.com/user-attachments/assets/31e006e6-50c8-4d0c-8a53-e5c49bc4c279)
+<h5>Two step model order selection procedure for one representative realization of Eq. 31 and simulation set I. (A) The top panel depicts the MSE obtained during step 1 for different p and q values using a regularization parameter of λ = 10 as an initial value. The bottom panel depicts the U-curve from step 2, using the model order that achieved the smallest MSE [i.e., (p,q) = (10,2)] at step 1 (i.e., top panel). The regularization parameter that corresponds to the minimum of the U-curve was selected as optimal (i.e., λ = 1). (B) Similar as (A), however, the initial regularization parameter at step 1 was set to λ = 0.01. Copied from Kostoglou, K., & Müller-Putz, G. R. (2022) under CC-BY license.</h5>
+
 
 ---
 
