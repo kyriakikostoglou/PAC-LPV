@@ -84,6 +84,9 @@ This model-based approach provides:
 6. **Visualization**  
    - Compute MI across grids of phase (fl) and amplitude (fh) frequencies.  
    - Display results as a 2D PAC map.
+
+<img width="592" height="266" alt="image" src="https://github.com/user-attachments/assets/03c9e043-e069-4d49-8713-fa4253038041" />
+
      
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## 🧱 **Function Descriptions**
@@ -194,7 +197,7 @@ Main
 The console will print progress such as:
 
 ```
-Estimating PAC... iteration 5 | low-freq 6.0 Hz | high-freq 40.0 Hz
+Estimating PAC... realization 1 | low-freq 6.0 Hz | high-freq 40.0 Hz
 ```
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
