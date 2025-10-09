@@ -1,19 +1,27 @@
-function [MI] = pac_LPV(phas, ampl)
+function [MI] = pac_LPV(phas, ampl, niters)
 %PAC_LPV Estimate modulation index (MI) via LPV polynomial AR modeling.
 %
-% The method:
+% Method summary:
 %   - Uses scheduling variables a = [cos(phase), sin(phase)]
 %   - Searches over small grids of AR order (p) and polynomial degree (pl)
 %     to find a good model (via residual energy)
-%   - Then selects a ridge parameter by balancing fit vs. coefficient norm
+%   - Selects ridge parameter by balancing fit vs. coefficient norm
 %   - Computes MI by comparing residual energy to a phase-shuffled baseline
 %
 % Inputs
-%   phas : 1 x N phase time series (radians)
-%   ampl : 1 x N amplitude/envelope time series (nonnegative)
+%   phas   : 1 x N phase time series (radians)
+%   ampl   : 1 x N amplitude/envelope time series (nonnegative)
+%   niters : scalar, number of shuffling iterations used to build the
+%            null distribution (i.e., how many times to permute phase and
+%            recompute residuals). Higher = more stable null estimate.
+%            Default = 10 if not provided.
 %
 % Output
-%   MI   : scalar modulation index
+%   MI     : scalar modulation index
+
+if nargin < 3 || isempty(niters)
+    niters = 10;  % default null iterations
+end
 
 AA = ampl(:);                            % ensure column
 a  = [cos(phas(:)) sin(phas(:))];        % scheduling variables
@@ -52,11 +60,11 @@ res = LPVpol_reg([pop plop], AA, a, reg_c);
 
 % Build a null distribution by shuffling the scheduling variables (phase)
 % and recomputing the residual for the same coefficients (SIM only).
-for iter = 1:10
-    anew = a(randperm(size(a,1)), :);        % permute time order (break PAC)
-    res2(iter) = SIM_LPVpol([pop plop], AA, anew, res.Cmat); %#ok<AGROW>
+for iter = 1:niters
+    anew = a(randperm(size(a,1)), :);       % permute time order (break PAC)
+    res2(iter) = SIM_LPVpol([pop plop], AA, anew, res.Cmat);
 end
 
 % MI as distance between fit error and shuffled baseline (log ratio)
-MI = abs(log((res.nmse) / mean([res2.nmse])));  % use field below from SIM
+MI = abs(log((res.nmse) / mean([res2.nmse])));
 end
