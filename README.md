@@ -213,7 +213,7 @@ The console will print progress such as:
 Estimating PAC... realization 1 | low-freq 6.0 Hz | high-freq 40.0 Hz
 ```
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## 🧩 📚 **Reference** (please cite the following work, thank you!)
+## 📚 **Reference** (please cite the following work, thank you!)
 
 > **Kostoglou, K., & Müller-Putz, G. R. (2022).**  
 > *Using linear parameter varying autoregressive models to measure cross frequency couplings in EEG signals.*  
